@@ -1,0 +1,22 @@
+{
+    "name": "gwk/dynamo-session-bundle",
+    "description": "DynamoDB Session Handler Bundle for Symfony 2",
+    "keywords": ["symfony", "bundle", "session", "aws", "dynamodb"],
+    "authors": [
+        {
+            "name": "Gijs Kunze",
+            "email": "gwkunze@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": ">=2.1.0",
+        "aws/aws-sdk-php": ">=2.1"
+    },
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": { "GWK\\DynamoSessionBundle": "" }
+    },
+    "target-dir": "GWK/DynamoSessionBundle"
+}
