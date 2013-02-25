@@ -66,8 +66,10 @@ class GWKDynamoSessionExtension extends Extension
             'locking_strategy' => $config['locking_strategy'],
         );
 
-        if(isset($config['session_lifetime'])) {
-            $dynamo_config['session_lifetime'] = (int)$config['session_lifetime'];
+        foreach(array('automatic_gc', 'gc_batch_size', 'session_lifetime') as $key) {
+            if(isset($config[$key])) {
+                $dynamo_config[$key] = $config[$key];
+            }
         }
 
         $handler = $container->getDefinition("dynamo_session_handler");

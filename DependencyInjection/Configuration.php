@@ -30,6 +30,8 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('table')->end()
             ->scalarNode('locking_strategy')->defaultValue("pessimistic")->end()
             ->scalarNode('dynamo_client_id')->end()
+            ->booleanNode('automatic_gc')->end()
+            ->scalarNode('gc_batch_size')->end()
             ->scalarNode('session_lifetime')->end()
             ->scalarNode('read_capacity')->defaultValue(10)->end()
             ->scalarNode('write_capacity')->defaultValue(10)->end()

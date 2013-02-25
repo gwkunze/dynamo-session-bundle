@@ -40,6 +40,9 @@ gwk_dynamo_session:
     table: my_session_table # DynamoDb Table to store sessions in
     locking_strategy: pessimistic # See AWS PHP documentation for valid values
     # dynamo_client_id: my_dynamodb_service # If you already use DynamoDb and you have a AWS\DynamoDb\DynamoDbClient service, you can make the session handler use it
+    automatic_gc: true # Whether to use PHP's internal automatic garbage collection. The AWS sdk doesn't recommend it but doesn't explain why
+    gc_batch_size: 25 # Maximum number of sessions the garbage collector deletes when garbage collection is started (manually or automatic)
+    session_lifetime: 3600 # Number of seconds after which idle sessions should be garbage collected
     read_capacity: 10 # Default read capacity
     write_capacity: 10 # Default write capacity
     aws:
