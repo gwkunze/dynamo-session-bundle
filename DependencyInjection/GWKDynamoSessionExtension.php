@@ -61,14 +61,19 @@ class GWKDynamoSessionExtension extends Extension
         $container->setParameter("dynamo_session_read_capacity", $config['read_capacity']);
         $container->setParameter("dynamo_session_write_capacity", $config['write_capacity']);
 
+        $dynamo_config = array(
+            'table_name' => $config['table'],
+            'locking_strategy' => $config['locking_strategy'],
+        );
+
+        if(isset($config['session_lifetime'])) {
+            $dynamo_config['session_lifetime'] = (int)$config['session_lifetime'];
+        }
+
         $handler = $container->getDefinition("dynamo_session_handler");
         $handler->setArguments(array(
             new Reference("dynamo_session_client"),
-            array(
-                'table_name' => $config['table'],
-                'locking_strategy' => $config['locking_strategy'],
-                //'hash_key' => 'id',
-            ),
+            $dynamo_config,
         ));
 
     }

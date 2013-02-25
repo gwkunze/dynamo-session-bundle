@@ -30,6 +30,7 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('table')->end()
             ->scalarNode('locking_strategy')->defaultValue("pessimistic")->end()
             ->scalarNode('dynamo_client_id')->end()
+            ->scalarNode('session_lifetime')->end()
             ->scalarNode('read_capacity')->defaultValue(10)->end()
             ->scalarNode('write_capacity')->defaultValue(10)->end()
             ->arrayNode('aws')
@@ -42,17 +43,6 @@ class Configuration implements ConfigurationInterface
             ->end()
         ;
 
-//     * - locking_strategy:         Locking strategy for session locking logic
-//     * - dynamodb_client:          Client for doing DynamoDB operations
-//     * - table_name:               Name of the table in which to store sessions
-//     * - hash_key:                 Name of the hash key in the sessions table
-//     * - session_lifetime:         Lifetime of inactive sessions
-//     * - consistent_read:          Use DynamoDB consistent reads for `GetItem`
-//     * - automatic_gc:             Use PHP's auto garbage collection
-//     * - gc_batch_size:            Batch size for garbage collection deletes
-//     * - max_lock_wait_time:       Max time to wait for lock acquisition
-//     * - min_lock_retry_microtime: Min time to wait between lock attempts
-//     * - max_lock_retry_microtime: Max time to wait between lock attempts
 
         return $treeBuilder;
     }
