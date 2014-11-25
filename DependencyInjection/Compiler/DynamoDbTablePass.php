@@ -26,6 +26,10 @@ class DynamoDbTablePass implements CompilerPassInterface
             return;
         }
 
+        if($container->getParameter("session.handler_id") !== "dynamo_session_handler") {
+            return;
+        }
+
         /** @var $client DynamoDbClient */
         $client = $container->get("dynamo_session_client");
 
