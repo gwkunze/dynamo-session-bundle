@@ -55,6 +55,19 @@ If you use AWS IAM Roles and your instance's permissions allow access to the app
 
 If the table does not exist the bundle will create the table for you with the specified capacities. Once the table is created the capacity configuration values are no longer used (unless the table is deleted).
 
+FAQ
+===
+
+Fixing cURL error #77
+---------------------
+Certain versions of CentOS AWS AMIs may need this additional php.ini configuration to fix this exception:
+
+```
+curl.cainfo="/etc/ssl/certs/ca-bundle.crt" 
+```
+
+Source: http://stackoverflow.com/a/26269489
+
 License
 =======
 
