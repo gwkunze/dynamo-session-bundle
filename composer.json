@@ -1,6 +1,6 @@
 {
     "name": "gwk/dynamo-session-bundle",
-    "description": "DynamoDB Session Handler Bundle for Symfony 2",
+    "description": "Fork DynamoDB Session Handler Bundle for Symfony 2 (sf2.6 compatibility)",
     "keywords": ["symfony", "bundle", "session", "aws", "dynamodb"],
     "authors": [
         {
