@@ -22,7 +22,7 @@ class DynamoDbTablePass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if(!$container->hasDefinition("dynamo_session_client")) {
+        if(!$container->hasDefinition("dynamo_session_client") && !$container->hasAlias("dynamo_session_client")) {
             return;
         }
 
