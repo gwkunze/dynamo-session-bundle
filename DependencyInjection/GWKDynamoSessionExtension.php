@@ -54,7 +54,7 @@ class GWKDynamoSessionExtension extends Extension
             $config['dynamo_client_id'] = "dynamo_session_client";
         } else {
             $container->removeDefinition("dynamo_session_client");
-            $container->setAlias("dynamo_session_client", $config['client_id']);
+            $container->setAlias("dynamo_session_client", $config['dynamo_client_id']);
         }
 
         $container->setParameter("dynamo_session_table", $config['table']);
