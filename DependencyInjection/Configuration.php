@@ -41,6 +41,7 @@ class Configuration implements ConfigurationInterface
                     ->scalarNode('region')->end()
                     ->scalarNode('key')->end()
                     ->scalarNode('secret')->end()
+                    ->scalarNode('base_url')->end()
                 ->end()
             ->end()
         ;
