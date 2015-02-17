@@ -40,6 +40,9 @@ class GWKDynamoSessionExtension extends Extension
         $aws_config = array();
         if(isset($config['aws'])) {
             $aws_config = $config['aws'];
+            if(isset($aws_config['base_url']) && $aws_config['base_url'] == "") {
+                unset($aws_config['base_url']);
+            }
         }
 
         if(!isset($config['dynamo_client_id'])) {
