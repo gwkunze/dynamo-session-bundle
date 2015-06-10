@@ -42,6 +42,7 @@ class Configuration implements ConfigurationInterface
                     ->scalarNode('key')->end()
                     ->scalarNode('secret')->end()
                     ->scalarNode('base_url')->end()
+                    ->scalarNode('version')->end()
                 ->end()
             ->end()
         ;
