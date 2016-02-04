@@ -40,7 +40,7 @@ class Configuration implements ConfigurationInterface
                 ->children()
                     ->scalarNode('region')->end()
                     ->scalarNode('version')->end()
-                    ->arrayNode('aws')
+                    ->arrayNode('credentials')
                         ->children()
                             ->scalarNode('key')->end()
                             ->scalarNode('secret')->end()
