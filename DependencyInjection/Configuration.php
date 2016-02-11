@@ -39,6 +39,7 @@ class Configuration implements ConfigurationInterface
                 ->info("AWS configuration")
                 ->children()
                     ->scalarNode('region')->end()
+                    ->scalarNode('version')->end()
                     ->scalarNode('key')->end()
                     ->scalarNode('secret')->end()
                 ->end()

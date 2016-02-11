@@ -47,6 +47,7 @@ gwk_dynamo_session:
     write_capacity: 10 # Default write capacity
     aws:
         region: us-east-1 # AWS Region to use
+        version: latest # AWS API version
         key: AKA123456789 # Your AWS key
         secret: abcdeffhij # Your AWS secret
 ```
