@@ -36,7 +36,7 @@ class SessionHandler implements SessionHandlerInterface {
         $this->client = $client;
 
         $config['dynamodb_client'] = $client;
-        $this->handler = \Aws\DynamoDb\Session\SessionHandler::factory($config);
+        $this->handler = \Aws\DynamoDb\SessionHandler::fromClient($client, $config);
     }
 
     /**
