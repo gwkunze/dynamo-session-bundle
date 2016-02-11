@@ -14,7 +14,7 @@ use SessionHandlerInterface;
 /**
  * Class SessionHandler
  *
- * Proxy class for \Aws\DynamoDb\Session\SessionHandler which implements SessionHandlerInteface
+ * Proxy class for \Aws\DynamoDb\SessionHandler which implements SessionHandlerInteface
  */
 class SessionHandler implements SessionHandlerInterface {
 
@@ -24,7 +24,7 @@ class SessionHandler implements SessionHandlerInterface {
     protected $client;
 
     /**
-     * @var \Aws\DynamoDb\Session\SessionHandler
+     * @var \Aws\DynamoDb\SessionHandler
      */
     protected $handler;
 
@@ -36,7 +36,7 @@ class SessionHandler implements SessionHandlerInterface {
         $this->client = $client;
 
         $config['dynamodb_client'] = $client;
-        $this->handler = \Aws\DynamoDb\Session\SessionHandler::factory($config);
+        $this->handler = \Aws\DynamoDb\SessionHandler::fromClient($this->client, $config);
     }
 
     /**
