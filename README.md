@@ -1,6 +1,8 @@
 # DynamoDb Session Handler bundle #
 
-This Symfony 2.1 bundle allows you to use the DynamoDb Web Service to store your sessions
+This Symfony 2.x bundle allows you to use the DynamoDb Web Service to store your sessions
+
+__Starting from version 1.0 this bundle requires the AWS PHP SDK version 3.0+, if you're using the 2.x SDK use the latest 0.x version__
 
 Installation
 ============
