@@ -46,9 +46,14 @@ class GWKDynamoSessionExtension extends Extension
             $dynamoClass = $container->getParameter("dynamo_session_client.class");
 
             $def = new Definition($dynamoClass);
-            $def->setFactoryClass($dynamoClass);
-            $def->setFactoryMethod("factory");
-            $def->setArguments(array($aws_config));
+            if (method_exists($def, 'setFactory')) {
+                $def->setFactory([$dynamoClass, "factory"]);
+            } else {
+                $def->setFactoryClass($dynamoClass);
+                $def->setFactoryMethod("factory");
+            }
+
+            $def->setArguments([$aws_config]);
 
             $container->setDefinition("dynamo_session_client", $def);
             $config['dynamo_client_id'] = "dynamo_session_client";
